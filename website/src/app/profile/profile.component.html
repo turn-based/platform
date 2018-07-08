@@ -1,0 +1,9 @@
+<div *ngIf="profile">
+  <div><h3>Profile</h3></div>
+  <div>
+    <img style="max-width: 150px;" src="{{profile.picture}}"  alt="avatar">
+    <div><strong>Nickname</strong> {{ profile.nickname }}</div>
+    <div><strong>Email</strong> {{ profile.email }}</div>
+    <pre>{{ profile | json }}</pre>
+  </div>
+</div>

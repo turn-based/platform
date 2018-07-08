@@ -9,18 +9,32 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TableComponent } from './table/table.component';
 import { TablePageComponent } from './table/table-page.component';
+import { AuthService } from './auth/auth.service';
+import { ProfileComponent } from './profile/profile.component';
+import { PingComponent } from './ping/ping.component';
+import { CallbackComponent } from './callback/callback.component';
+import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     NavComponent,
     DashboardComponent,
     TableComponent,
-    TablePageComponent
+    TablePageComponent,
+
+    HomeComponent,
+    ProfileComponent,
+    PingComponent,
+    CallbackComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+
+    AppRoutingModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
@@ -34,7 +48,9 @@ import { TablePageComponent } from './table/table-page.component';
     MatPaginatorModule,
     MatSortModule
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [NavComponent]
 })
 export class AppModule { }

@@ -10,6 +10,22 @@
     <mat-nav-list>
       <a mat-list-item routerLink="dashboard">dashboard</a>
       <a mat-list-item routerLink="table">table</a>
+
+
+      <a mat-list-item routerLink="/">Home {{!!auth}}</a>
+
+      <mat-divider></mat-divider>
+
+      <ng-container [ngSwitch]="auth.isAuthenticated()">
+        <a *ngSwitchCase="false" mat-list-item (click)="auth.login()">Log In</a>
+        <a mat-list-item routerLink="/ping">Ping</a>
+
+        <ng-container *ngSwitchCase="true">
+          <a mat-list-item routerLink="/profile">Profile</a>
+          <a mat-list-item (click)="auth.logout()">Log Out</a>
+        </ng-container>
+      </ng-container>
+
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
