@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "node dist/server2/start.js",
+    "start:dev": "cross-env NODE_ENV=development node -r ts-node/register start.ts",
+    "deploy": "node -r ts-node/register scripts/deploy.ts",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "watch-ts": "tsc -p tsconfig.build.json -w"
+  },
+  "devDependencies": {
+    "@types/node": "^8.10.20",
+    "cross-env": "^5.2.0",
+    "gh-pages": "^1.2.0",
+    "ts-node": "^7.0.0",
+    "typescript": "~2.7.2"
+  },
+  "dependencies": {
+    "boardgame.io": "^0.24.0",
+    "koa-helmet": "^4.0.0"
+  }
+}

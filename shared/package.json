@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "dependencies": {
+    "boardgame.io": "^0.24.0"
+  }
+}
